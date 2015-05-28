@@ -132,6 +132,22 @@ void Movimientos::atras(int vel)
 
 }
 
+void Movimientos::derecha(int vel)
+{
+
+  adelante1(vel);
+  atras2(vel);
+
+}
+
+void Movimientos::izquierda(int vel)
+{
+
+  atras1(vel);
+  adelante2(vel);
+
+}
+
 void Movimientos::alto()
 {
 
