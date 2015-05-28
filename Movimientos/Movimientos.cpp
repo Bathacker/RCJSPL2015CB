@@ -1,3 +1,6 @@
+#include "Movimientos.h"
+#include "Arduino.h"
+
 void Movimientos::Movimientos()
 {
 
@@ -36,28 +39,28 @@ void Movimientos::setM2(int M2PWM, int M2INB, int M2INB, int M2INA, int M2EN)
 void Movimientos::encenderM1()
 {
 
-  digitalWrite(M1EN, LOW);
+  digitalWrite(M1EN, HIGH);
 
 }
 
 void Movimientos::apagarM1()
 {
 
-  digitalWrite(M1EN, HIGH);
+  digitalWrite(M1EN, LOW);
 
 }
 
 void Movimientos::encederM2()
 {
 
-  digitalWrite(M2EN, LOW);
+  digitalWrite(M2EN, HIGH);
 
 }
 
 void Movimientos::apagarM2()
 {
 
-  digitalWrite(M2EN, HIGH);
+  digitalWrite(M2EN, LOW);
 
 }
 
@@ -82,8 +85,8 @@ void Movimientos::atras1(int vel)
 void Movimientos::alto1()
 {
 
-  digitalWrite(M1INB, LOW);
-  digitalWrite(M1INA, LOW);
+  digitalWrite(M1INB, HIGH);
+  digitalWrite(M1INA, HIGH);
 
 }
 
@@ -126,22 +129,6 @@ void Movimientos::atras(int vel)
 
   atras1(vel);
   atras2(vel);
-
-}
-
-void Movimientos::derecha(int vel)
-{
-
-  adelante1(vel);
-  atras2(vel);
-
-}
-
-void Movimientos::izquierda(int vel)
-{
-
-  atras1(vel);
-  adelante2(vel);
 
 }
 

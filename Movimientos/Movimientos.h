@@ -19,8 +19,6 @@ class Movimientos
    void alto2();
    void adelante(int vel);
    void atras(int vel);
-   void derecha(int vel);
-   void izquierda(int vel);
    void alto();
   
   private:
