@@ -1,5 +1,6 @@
 #ifndef Omnidireccional_h
 #define Omnidireccional_h
+#include <VNH5019.h>
 
 class Ominidireccional
 {
@@ -38,6 +39,8 @@ class Ominidireccional
 		Motor4alto();
 
 	private:
+
+		VNH5019 diego, yoalli;
 
 };
 #endif
