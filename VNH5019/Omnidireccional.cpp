@@ -59,8 +59,8 @@ void Omnidireccional::adelante()
 void Omnidireccional::atras(int vel)
 {
 
-	puente1.atras1(vel);
-	puente1.atras2(vel);
+	puente1.atras1(vel); //motor1
+	puente1.atras2(vel); //motor2
 	puente2.atras1(vel);
 	puente2.atras2(vel);
 
@@ -75,3 +75,74 @@ void Omnidireccional::atras()
 	puente2.atras2(255);
 
 }
+ void Omnidireccional::Motor4alto()
+{
+	puente2.apagarM2();
+
+}
+void Omnidireccional::Motor4Atras()
+{
+	puente2.atras2(vel);
+}
+void Omnidireccional::Motor4Adel()
+{
+	puente2.Adelante2(vel);
+}
+void Omnidireccional::Motor3alto()
+{
+	puente2.apagarM1();
+}
+void Omnidireccional::Motor3atras()
+{
+	puente2.atras1(vel);
+}
+void Omnidireccional::Motor3adel()
+{
+	puente2.adelante1(vel);
+}
+void Omnidireccional::Motor2alto()
+{
+	puente1.apagarM2();
+}
+void Omnidireccional::Motor2atras()
+{
+	puente1.atras2(vel);
+}
+
+void Omnidireccional::Motor2adel()
+{
+	puente1.adelante2(vel);
+}
+void Omnidireccional::Motor1alto()
+{
+	puente1.apagarM1();
+
+}
+void Omnidireccional::Motor1atras()
+{
+	puente1.atras1(vel);
+}
+void Omnidireccional::Motor1adel()
+{
+	puente1.adelante1(vel);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
