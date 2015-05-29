@@ -17,11 +17,6 @@ class PuenteDios
    void adelante2(int vel);
    void atras2(int vel);
    void alto2();
-   void adelante(int vel);
-   void atras(int vel);
-   void derecha(int vel);
-   void izquierda(int vel);
-   void alto();
   
   private:
   

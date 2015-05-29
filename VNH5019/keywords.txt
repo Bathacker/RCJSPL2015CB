@@ -16,9 +16,4 @@ atras1			KEYWORD2\
 alto1				KEYWORD2\
 encender2		KEYWORD2\
 atras2			KEYWORD2\
-alto2				KEYWORD2\
-adelante			KEYWORD2\
-atras				KEYWORD2\
-derecha			KEYWORD2\
-izquierda			KEYWORD2\
-alto				KEYWORD2}
+alto2				KEYWORD2}
