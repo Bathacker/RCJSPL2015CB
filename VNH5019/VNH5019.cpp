@@ -1,14 +1,14 @@
-#include "Movimientos.h"
+#include "VNH5019.h"
 #include "Arduino.h"
 
-void Movimientos::Movimientos()
+void VNH5019::VNH5019()
 {
 
 
 
 }
 
-void Movimientos::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
+void VNH5019::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
 {
   
   M1PWM = this M1PWM;
@@ -22,7 +22,7 @@ void Movimientos::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
   
 }
 
-void Movimientos::setM2(int M2PWM, int M2INB, int M2INB, int M2INA, int M2EN)
+void VNH5019::setM2(int M2PWM, int M2INB, int M2INB, int M2INA, int M2EN)
 {
 
   M2PWM = this M2PWM;
@@ -36,35 +36,35 @@ void Movimientos::setM2(int M2PWM, int M2INB, int M2INB, int M2INA, int M2EN)
 
 }
 
-void Movimientos::encenderM1()
+void VNH5019::encenderM1()
 {
 
   digitalWrite(M1EN, HIGH);
 
 }
 
-void Movimientos::apagarM1()
+void VNH5019::apagarM1()
 {
 
   digitalWrite(M1EN, LOW);
 
 }
 
-void Movimientos::encederM2()
+void VNH5019::encederM2()
 {
 
   digitalWrite(M2EN, HIGH);
 
 }
 
-void Movimientos::apagarM2()
+void VNH5019::apagarM2()
 {
 
   digitalWrite(M2EN, LOW);
 
 }
 
-void Movimientos::adelante1(int vel)
+void VNH5019::adelante1(int vel)
 {
 
   digitalWrite(M1INB, HIGH);
@@ -73,7 +73,7 @@ void Movimientos::adelante1(int vel)
 
 }
 
-void Movimientos::atras1(int vel)
+void VNH5019::atras1(int vel)
 {
 
   digitalWrite(M1INB, LOW);
@@ -82,7 +82,7 @@ void Movimientos::atras1(int vel)
 
 }
 
-void Movimientos::alto1()
+void VNH5019::alto1()
 {
 
   digitalWrite(M1INB, HIGH);
@@ -90,7 +90,7 @@ void Movimientos::alto1()
 
 }
 
-void Movimientos::adelante2(int vel)
+void VNH5019::adelante2(int vel)
 {
 
   digitalWrite(M2INB, HIGH);
@@ -99,7 +99,7 @@ void Movimientos::adelante2(int vel)
 
 }
 
-void Movimientos::atras2(int vel)
+void VNH5019::atras2(int vel)
 {
 
   digitalWrite(M2INB, LOW);
@@ -108,7 +108,7 @@ void Movimientos::atras2(int vel)
 
 }
 
-void Movimientos::alto2()
+void VNH5019::alto2()
 {
 
   digitalWrite(M2INB, LOW);
@@ -116,7 +116,7 @@ void Movimientos::alto2()
 
 }
 
-void Movimientos::adelante(int vel)
+void VNH5019::adelante(int vel)
 {
 
   adelante1(vel);
@@ -124,7 +124,7 @@ void Movimientos::adelante(int vel)
 
 }
 
-void Movimientos::atras(int vel)
+void VNH5019::atras(int vel)
 {
 
   atras1(vel);
@@ -132,7 +132,7 @@ void Movimientos::atras(int vel)
 
 }
 
-void Movimientos::derecha(int vel)
+void VNH5019::derecha(int vel)
 {
 
   adelante1(vel);
@@ -140,7 +140,7 @@ void Movimientos::derecha(int vel)
 
 }
 
-void Movimientos::izquierda(int vel)
+void VNH5019::izquierda(int vel)
 {
 
   atras1(vel);
@@ -148,7 +148,7 @@ void Movimientos::izquierda(int vel)
 
 }
 
-void Movimientos::alto()
+void VNH5019::alto()
 {
 
   alto1();

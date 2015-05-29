@@ -1,10 +1,10 @@
-#ifndef Movimientos_h
-#define Movimientos_h
-class Movimientos
+#ifndef VNH5019_h
+#define VNH5019_h
+class PuenteDios
 {
   public:	
    
-   Movimientos();
+   VNH5019();
    void setM1(int M1PWM, int M1INB, int M1INA, int M1EN);
    void setM2(int M2PWM, int M2INB, int M2INA, int M2EN);
    void encenderM1();
