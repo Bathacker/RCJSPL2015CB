@@ -5,6 +5,9 @@ class Color  {
    Color();
    void Color();
    void setPin(int _s0, int _s1, int _s2, int _s3 ,int _out);
+   int getRed();
+   int getGreen();
+   int getBlue();
 
 
 

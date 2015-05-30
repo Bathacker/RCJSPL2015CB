@@ -25,16 +25,3 @@ void Color::setPin(int _s0, int _s1, int _s2, int _s3 ,int _out)
 	s3=_s3;
 	out=_out;
 }
- int Color::getGreen()
- {
-  return green;  
- }
-int Color::getBlue()
-{
-  return blue;
-}
-int Color::getRed()
-{
-  return red;
-}
-
