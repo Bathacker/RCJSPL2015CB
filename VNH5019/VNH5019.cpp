@@ -1,7 +1,7 @@
 #include "VNH5019.h"
 #include "Arduino.h"
 
-void VNH5019::VNH5019()
+VNH5019::VNH5019()
 {
 
 

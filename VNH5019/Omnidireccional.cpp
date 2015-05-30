@@ -1,7 +1,7 @@
 #include "Omnidireccional.h"
 #include <VNH5019.h>
 
-void Omnidireccional::Omnidireccional()
+Omnidireccional::Omnidireccional()
 {
 
 
@@ -139,9 +139,9 @@ void Omnidireccional::eSDer()
 void Omnidireccional::eSIzq(int vel)
 {
 
-	puente1.aelante1(vel);
+	puente1.adelante1(vel);
 	puente1.alto2();
-	puente2.aelante1(vel);
+	puente2.adelante1(vel);
 	puente2.alto2();
 
 }
@@ -149,9 +149,9 @@ void Omnidireccional::eSIzq(int vel)
 void Omnidireccional::eSIzq()
 {
 
-	puente1.aelante1(255);
+	puente1.adelante1(255);
 	puente1.alto2();
-	puente2.aelante1(255);
+	puente2.adelante1(255);
 	puente2.alto2();
 
 }

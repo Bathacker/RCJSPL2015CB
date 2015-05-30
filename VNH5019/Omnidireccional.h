@@ -1,13 +1,13 @@
 #ifndef Omnidireccional_h
 #define Omnidireccional_h
-#include <VNH5019.h>
+#include "VNH5019.h"
 
-class Ominidireccional
+class Omnidireccional
 {
 
 	public:
 
-		Ominidireccional();
+		Omnidireccional();
 		void setM1puente1(int M1PWM, int M1INB, int M1INA, int M1EN);
         void setM2puente1(int M2PWM, int M2INB, int M2INA, int M2EN);
         void setM1puente2(int M1PWM, int M1INB, int M1INA, int M1EN);
@@ -44,7 +44,8 @@ class Ominidireccional
 
 	private:
 
-		VNH5019 puente1, puente2;
+		VNH5019 puente1;
+		VNH5019 puente2;
 
 };
 #endif
