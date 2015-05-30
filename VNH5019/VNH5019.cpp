@@ -11,10 +11,6 @@ VNH5019::VNH5019()
 void VNH5019::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
 {
   
-  M1PWM = this M1PWM;
-  M1INB = this M1INB;
-  M1INA = this M1INA;
-  M1EN = this M1EN;  
   pinMode(M1PWM, OUTPUT);
   pinMode(M1INB, OUTPUT);
   pinMode(M1INA, OUTPUT);
@@ -22,13 +18,9 @@ void VNH5019::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
   
 }
 
-void VNH5019::setM2(int M2PWM, int M2INB, int M2INB, int M2INA, int M2EN)
+void VNH5019::setM2(int M2PWM, int M2INB, int M2INA, int M2EN)
 {
 
-  M2PWM = this M2PWM;
-  M2INB = this M2INB;
-  M2INA = this M2INA;
-  M2EN = this M2EN;
   pinMode(M2PWM, OUTPUT);
   pinMode(M2INB, OUTPUT);
   pinMode(M2INA, OUTPUT);
@@ -50,7 +42,7 @@ void VNH5019::apagarM1()
 
 }
 
-void VNH5019::encederM2()
+void VNH5019::encenderM2()
 {
 
   digitalWrite(M2EN, HIGH);
