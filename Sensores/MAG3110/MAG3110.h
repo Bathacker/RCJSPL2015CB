@@ -1,4 +1,3 @@
-#include <Wire.h>
 #ifndef MAG3110_h
 #define MAG3110_h
 #define MAG_ADDR  0x0E //7-bit address for the MAG3110, doesn't change

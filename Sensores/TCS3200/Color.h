@@ -1,13 +1,19 @@
-#ifndef LED_h
-#define LED_h
-class LED {
-  public:
-   LED(int x);
-   void apagar();
-   void prender();
-   void parpadeoRapido();
-   void parpadeoLento();
-private:
-	int L;
+#ifndef Color_h
+#define Color_h
+
+class Color
+{
+
+	public:
+   		
+   		Color();
+   		void apagar();
+   		void prender();
+   		void parpadeoRapido();
+   		void parpadeoLento();
+	
+	private:
+
+
 };
 #endif

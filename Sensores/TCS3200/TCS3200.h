@@ -21,10 +21,10 @@ class TCS3200
 		int s3;  
 		int out;
 
-// Variables  
-int red = 0;  
-int green = 0;  
-int blue = 0; 
+		// Variables  
+		int red = 0;  
+		int green = 0;  
+		int blue = 0; 
 
 };
 #endif

@@ -8,7 +8,7 @@ TCS3200::TCS3200()
 
 } 
 
-void color::color()
+void TCS3200::color()
 {
 
 	digitalWrite(s2, LOW);  
