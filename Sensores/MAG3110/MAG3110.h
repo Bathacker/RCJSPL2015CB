@@ -5,6 +5,7 @@
 struct Valores
 {
 	
+	//Variables
 	int x;
 	int y;
 	int z;
@@ -16,6 +17,7 @@ class MAG3110
 
 	public:
 
+		//Metodos
 		MAG3110();
 		void iniciar();
 		Valores imprimirValores();

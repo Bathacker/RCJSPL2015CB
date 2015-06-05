@@ -6,7 +6,7 @@
 
 #include "HCSR04.h"
 
-HCSR04::HCSR04(int TP, int EP)
+HCSR04::HCSR04(int TP, int EP) //Declaromos los pines en el constructor
 {
    
    pinMode(TP,OUTPUT);

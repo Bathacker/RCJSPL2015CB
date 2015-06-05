@@ -1,7 +1,7 @@
 #include "arduino.h"
 #include "TCS3200.h"
 
-TCS3200::TCS3200()
+TCS3200::TCS3200() //Constructor
 {
 	
   //:)
@@ -24,7 +24,7 @@ void TCS3200::color()
 
 }
 
-void TCS3200::setPin(int _s0, int _s1, int _s2, int _s3 ,int _out)
+void TCS3200::setPin(int _s0, int _s1, int _s2, int _s3 ,int _out) //Declaramos los pines del sensor
 {
 
 	s0=_s0;
@@ -35,24 +35,23 @@ void TCS3200::setPin(int _s0, int _s1, int _s2, int _s3 ,int _out)
 
 }
 
-int TCS3200::getGreen()
+int TCS3200::getGreen() //Obtenemos el color verde
 {
 
   return green;  
 
 }
 
-int TCS3200::getBlue()
+int TCS3200::getBlue() //Obtenemos el color azul
 {
 
   return blue;
 
 }
 
-int TCS3200::getRed()
+int TCS3200::getRed() //Obtenemos el color rojo
 {
 
   return red;
 
 }
-

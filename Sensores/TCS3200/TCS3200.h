@@ -6,6 +6,7 @@ class TCS3200
   
   	public:
    		
+   		//Metodos
    		TCS3200();
    		void color();
    		void setPin(int _s0, int _s1, int _s2, int _s3 ,int _out);

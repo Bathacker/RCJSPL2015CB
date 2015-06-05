@@ -2,7 +2,7 @@
 #include "MAG3110.h"
 #include "Arduino.h"
 
-void MAG3110::iniciar()
+void MAG3110::iniciar() //Iniciamos la comunicación con el sensor
 {
 
   Wire.beginTransmission(MAG_ADDR);
@@ -12,7 +12,7 @@ void MAG3110::iniciar()
 
 }
 
-Valores MAG3110::imprimirValores()
+Valores MAG3110::imprimirValores() //Imprimimos los valores
 {
 
   Valores res;
@@ -31,7 +31,7 @@ Valores MAG3110::imprimirValores()
 
 }
 
-int MAG3110::leerX()
+int MAG3110::leerX() //Leemos los datos que nos envia el eje Y del sensor
 {
 
   int xl, xh;
@@ -71,7 +71,7 @@ int MAG3110::leerX()
 
 }
 
-int MAG3110::leerY()
+int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
 {
 
   int yl, yh;
@@ -111,7 +111,7 @@ int MAG3110::leerY()
 
 }
 
-int MAG3110::leerZ()
+int MAG3110::leerZ() //Leemos los datos que nos envia el eje Y del sensor
 {
 
   int zl, zh;

@@ -15,6 +15,7 @@ class HCSR04
   
   public:
 
+    //Metodos
     HCSR04(int TP, int EP);
 	  HCSR04(int TP, int EP, long TO);
     long Timing();
@@ -22,6 +23,7 @@ class HCSR04
 
   private:
     
+    //Variables
     int Trig_pin;
     int Echo_pin;
 	  long Time_out;
