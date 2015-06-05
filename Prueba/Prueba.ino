@@ -4,6 +4,7 @@
 #include <TCS3200.h>
 #include <VNH5019.h>
 #include <Omnidireccional.h>
+#include <HTInfraredSeeker.h>
 
 void setup() {
   // put your setup code here, to run once:
