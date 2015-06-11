@@ -13,7 +13,7 @@ void setup()
   HCSR04 ultra(1, 2, 3);
   TCS3200 color();
   Omnidireccional omni();
-  HTInfraredSeeker ir();
+  InfraredSeeker ir();
   
 }
 
