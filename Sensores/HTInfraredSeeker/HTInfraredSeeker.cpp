@@ -7,7 +7,7 @@
 
 //metodos
 
-void HTInfraredSeeker::Initialize()
+void InfraredSeeker::Initialize()
 {
 
 	//iniciar comunicacion I2C
@@ -18,7 +18,7 @@ void HTInfraredSeeker::Initialize()
 
 }
 
-void HTInfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) // direccion
+void InfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) // direccion
 {
 
 	InfraredSeeker::Initialize();
@@ -39,14 +39,14 @@ void HTInfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) // direccion
 
 }
 
-void HTInfraredSeeker::ReadACRaw(byte* buffer) 
+void InfraredSeeker::ReadACRaw(byte* buffer) 
 {
 	
 	ReadValues(0x49, buffer);
 
 }
 
-InfraredInput HTInfraredSeeker::PopulateValues(byte* buffer)
+InfraredInput InfraredSeeker::PopulateValues(byte* buffer)
 {
 
 	InfraredInput Data;
@@ -81,7 +81,7 @@ InfraredInput HTInfraredSeeker::PopulateValues(byte* buffer)
 
 }
 
-InfraredInput HTInfraredSeeker::ReadAC()
+InfraredInput InfraredSeeker::ReadAC()
 {
 
 	byte buffer[6];
