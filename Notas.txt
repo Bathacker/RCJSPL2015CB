@@ -6,4 +6,6 @@
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
 \ls1\ilvl0
-\f0\fs48 \cf0 {\listtext	\'95	}Agregar la librer\'eda Wire cuando se agrega la librer\'eda MAG3110}
+\f0\fs48 \cf0 {\listtext	\'95	}Agregar la librer\'eda Wire cuando se agrega la librer\'eda MAG3110\
+{\listtext	\'95	}El ir se debe declarar como InfraredSeeker ir();\
+}
