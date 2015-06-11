@@ -6,12 +6,20 @@
 #include <Omnidireccional.h>
 #include <HTInfraredSeeker.h>
 
-void setup() {
-  // put your setup code here, to run once:
-
+void setup()
+{
+  
+  MAG3110 compas();
+  HCSR04 ultra(1, 2, 3);
+  TCS3200 color();
+  Omnidireccional omni();
+  HTInfraredSeeker ir();
+  
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop()
+{
 
+  
+  
 }

@@ -10,7 +10,7 @@
 	
 	};
 	
-	class InfraredSeeker
+	class HTInfraredSeeker
 	{
 		
 		public:
