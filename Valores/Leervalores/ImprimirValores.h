@@ -2,17 +2,16 @@
 #include <HCSR04.h>
 #include <MAG3110.h>
 #include <TCS3200.h>
-#include <Wire.h>
-#ifndef Leervalores_h
-#define Leervalores_h
+#ifndef ImprimirValores_h
+#define ImprimirValores_h
 #include "Arduino.h"
 
-class Leervalores
+class ImprimirValores
 {
-	
 	public:
 		
-		void LeerValoresSensores();
+		ImprimirValores();
+		void imprimirValoresSensores();
 
 	private:
 		
@@ -22,7 +21,6 @@ class Leervalores
 		TCS3200 colortres;
 		HCSR04 US;
 		InfraredSeeker IR;
-
 
 };
 #endif
