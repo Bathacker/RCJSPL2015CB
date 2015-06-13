@@ -12,6 +12,7 @@ class Leervalores
 	
 	public:
 		
+		Leervalores();
 		void LeerValoresSensores();
 
 	private:
