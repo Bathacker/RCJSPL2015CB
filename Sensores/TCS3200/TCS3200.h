@@ -13,6 +13,7 @@ class TCS3200
    		int getRed();
    		int getGreen();
    		int getBlue();
+   		void imprimirValores();
 
 	private:
  
@@ -21,7 +22,7 @@ class TCS3200
 		int s2;  
 		int s3;  
 		int out;
-
+		
 		// Variables  
 		int red = 0;  
 		int green = 0;  

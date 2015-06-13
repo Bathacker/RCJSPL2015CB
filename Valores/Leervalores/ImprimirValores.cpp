@@ -34,6 +34,6 @@ void ImprimirValores::ImprimirValoresSensores()
 	Serial.println(colordos.imprimirValores());
 	Serial.println(colortres.imprimirValores());
 	Serial.println(US.imprimirValores());
-	Serial.println(IR.imprimirValores());
+	Serial.println(IR.ReadValues());
 
 }

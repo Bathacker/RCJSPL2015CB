@@ -68,3 +68,10 @@ long HCSR04::Ranging(int sys)
   }
 
 }
+
+void HCSR04::imprimirValores()
+{
+
+  Ranging(cm);
+
+}

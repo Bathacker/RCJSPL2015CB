@@ -25,8 +25,8 @@ void Leervalores::LeerValoresSensores()
 	 colortres.getGreen();
 	 colortres.getBlue();
 	 colortres.getRed();
-	 us.Ranging(cm); //ultrasonico
-	 ir.ReadValues(); //infrarojo
+	 US.Ranging(cm); //ultrasonico
+	 IR.ReadValues(); //infrarojo
 
 
 

@@ -20,10 +20,12 @@ class HCSR04
 	  HCSR04(int TP, int EP, long TO);
     long Timing();
     long Ranging(int sys);
+    void imprimirValores();
 
   private:
     
     //Variables
+    int cm;
     int Trig_pin;
     int Echo_pin;
 	  long Time_out;

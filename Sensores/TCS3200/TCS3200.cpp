@@ -55,3 +55,12 @@ int TCS3200::getRed() //Obtenemos el color rojo
   return red;
 
 }
+
+void TCS3200::imprimirValores()
+{
+
+  TCS3200::getGreen();
+  TCS3200::getBlue();
+  TCS3200::getRed();
+
+}

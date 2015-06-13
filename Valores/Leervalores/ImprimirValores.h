@@ -11,7 +11,7 @@ class ImprimirValores
 	public:
 		
 		ImprimirValores();
-		void imprimirValoresSensores();
+		void ImprimirValoresSensores();
 
 	private:
 		
