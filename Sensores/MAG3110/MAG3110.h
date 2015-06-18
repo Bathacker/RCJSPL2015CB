@@ -5,7 +5,7 @@
 struct Valores
 {
 	
-	//Variables
+	//Variables de los ejes
 	int x;
 	int y;
 	int z;
@@ -17,11 +17,11 @@ class MAG3110
 
 	public:
 
-		//Metodos
+		//contructor
 		MAG3110();
-		void iniciar();
+		void iniciar(); // metodo empezar
 		Valores imprimirValores();
-		int leerX();
+		int leerX(); // variables
 		int leerY();
 		int leerZ();
 

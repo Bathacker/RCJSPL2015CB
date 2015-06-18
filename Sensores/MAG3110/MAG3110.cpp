@@ -12,7 +12,7 @@ void MAG3110::iniciar() //Iniciamos la comunicación con el sensor
 
 }
 
-Valores MAG3110::imprimirValores() //Imprimimos los valores
+Valores MAG3110::imprimirValores() //Imprimimos los valores de x.y y z
 {
 
   Valores res;
@@ -31,10 +31,10 @@ Valores MAG3110::imprimirValores() //Imprimimos los valores
 
 }
 
-int MAG3110::leerX() //Leemos los datos que nos envia el eje Y del sensor
+int MAG3110::leerX() //Leemos los datos que nos envia el eje x del sensor
 {
 
-  int xl, xh;
+  int xl, xh; // xl numero entero ,xh numero decimal
   
   Wire.beginTransmission(MAG_ADDR);
   Wire.write(0x01);
@@ -66,7 +66,7 @@ int MAG3110::leerX() //Leemos los datos que nos envia el eje Y del sensor
 
   }
   
-  int xout = (xl|(xh << 8));
+  int xout = (xl|(xh << 8)); // junta dos valores xl y xh a un solo numero
   return xout;
 
 }
@@ -74,7 +74,7 @@ int MAG3110::leerX() //Leemos los datos que nos envia el eje Y del sensor
 int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
 {
 
-  int yl, yh;
+  int yl, yh; //uno es numero entero yl y numero decimal yh
   
   Wire.beginTransmission(MAG_ADDR); 
   Wire.write(0x03);
@@ -106,15 +106,15 @@ int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
 
   }
   
-  int yout = (yl|(yh << 8));
+  int yout = (yl|(yh << 8)); // junta dos valores yl , yh a uno solo
   return yout;
 
 }
 
-int MAG3110::leerZ() //Leemos los datos que nos envia el eje Y del sensor
+int MAG3110::leerZ() //Leemos los datos que nos envia el eje z del sensor
 {
 
-  int zl, zh;
+  int zl, zh; //zl numero enter , zh numero decimal
   
   Wire.beginTransmission(MAG_ADDR);
   Wire.write(0x05);
@@ -146,7 +146,7 @@ int MAG3110::leerZ() //Leemos los datos que nos envia el eje Y del sensor
 
   }
   
-  int zout = (zl|(zh << 8));
+  int zout = (zl|(zh << 8)); // junta dos valores zl y zh a uno solo
   return zout;
 
 }
