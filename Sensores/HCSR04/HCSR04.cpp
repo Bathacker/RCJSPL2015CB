@@ -8,13 +8,11 @@
 
 HCSR04::HCSR04(int TP, int EP) //Declaromos los pines en el constructor
 {
-   
    pinMode(TP,OUTPUT);
    pinMode(EP,INPUT);
    Trig_pin = TP;
    Echo_pin = EP;
    Time_out = 3000;  // 30ms = 5 m // 3ms = 50cm
-
 }
 
 HCSR04::HCSR04(int TP, int EP, long TO)
@@ -71,7 +69,5 @@ long HCSR04::Ranging(int sys)
 
 void HCSR04::imprimirValores()
 {
-
   Ranging(cm);
-
 }
