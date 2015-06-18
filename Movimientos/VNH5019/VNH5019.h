@@ -5,9 +5,11 @@ class VNH5019
 {
   public:	
    
+   //Constructor
    VNH5019();
-   void setM1(int M1PWM, int M1INB, int M1INA, int M1EN);
-   void setM2(int M2PWM, int M2INB, int M2INA, int M2EN);
+   //Metodos
+   void setM1(int M1PWM, int M1INB, int M1INA, int M1EN);  //Metodo que declara los pines del M1
+   void setM2(int M2PWM, int M2INB, int M2INA, int M2EN);  //Metodo que declara los pines del M2
    void encenderM1();
    void apagarM1();
    void encenderM2();
@@ -21,14 +23,14 @@ class VNH5019
   
   private:
   
-    int M2PWM;
-    int M2INB;
-    int M2INA;
-    int M2EN;
-    int M1PWM;
-    int M1INB;
-    int M1INA;
-    int M1EN; 
+    int M2PWM; //Pin de velocidad del M2
+    int M2INB; //Pin entrada B del M2
+    int M2INA; //Pin entrada A del M2
+    int M2EN;  //Pin para encender/apagar el M1
+    int M1PWM; //Pin de velocidad del M1
+    int M1INB; //Pin entrada B del M1
+    int M1INA; //Pin entrada A del M1
+    int M1EN;  //Pin para encender/apagar el M1
 
 };
 #endif
