@@ -2,12 +2,14 @@
 #define Omnidireccional_h
 #include "VNH5019.h"
 
-class Omnidireccional
+class Omnidireccional //En esta libreria se usan los cuatro motores
 {
 
 	public:
 
+		//Constructor
 		Omnidireccional();
+		//Metodos 
 		void setM1puente1(int M1PWM, int M1INB, int M1INA, int M1EN);
         void setM2puente1(int M2PWM, int M2INB, int M2INA, int M2EN);
         void setM1puente2(int M1PWM, int M1INB, int M1INA, int M1EN);
@@ -44,6 +46,7 @@ class Omnidireccional
 
 	private:
 
+		//Puentes H
 		VNH5019 puente1;
 		VNH5019 puente2;
 

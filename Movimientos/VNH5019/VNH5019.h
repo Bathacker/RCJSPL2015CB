@@ -1,7 +1,7 @@
 #ifndef VNH5019_h
 #define VNH5019_h
 
-class VNH5019
+class VNH5019 //En esta libreria se usan dos motores
 {
   public:	
    
