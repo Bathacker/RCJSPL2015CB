@@ -1,2 +1,0 @@
-Leervalores		KEYWORD1
-LeerValoresSensores	KEYWORD2
