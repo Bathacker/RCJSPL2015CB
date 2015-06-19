@@ -46,7 +46,7 @@ int MAG3110::leerX() //Leemos los datos que nos envia el eje x del sensor
   while(Wire.available())
   { 
 
-    xh = Wire.read();
+    xh = Wire.read(); //segundo lee numero decimal
 
   }
   
@@ -59,15 +59,15 @@ int MAG3110::leerX() //Leemos los datos que nos envia el eje x del sensor
   delayMicroseconds(2);
   
   Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
+  while(Wire.available()) 
   { 
 
-    xl = Wire.read();
+    xl = Wire.read();//primero lee numero entero
 
   }
   
   int xout = (xl|(xh << 8)); // junta dos valores xl y xh a un solo numero
-  return xout;
+  return xout; //regresar coordenadas
 
 }
 
@@ -86,7 +86,7 @@ int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
   while(Wire.available())
   { 
 
-    yh = Wire.read();
+    yh = Wire.read(); //Segundo lee numero decimal
 
   }
   
@@ -102,12 +102,12 @@ int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
   while(Wire.available())
   { 
 
-    yl = Wire.read();
+    yl = Wire.read(); //Primero lee numero entero
 
   }
   
   int yout = (yl|(yh << 8)); // junta dos valores yl , yh a uno solo
-  return yout;
+  return yout; //regresa coordenadas
 
 }
 
@@ -126,7 +126,7 @@ int MAG3110::leerZ() //Leemos los datos que nos envia el eje z del sensor
   while(Wire.available())
   { 
 
-    zh = Wire.read();
+    zh = Wire.read(); //Segundo lee numero decimal
 
   }
   
@@ -142,11 +142,11 @@ int MAG3110::leerZ() //Leemos los datos que nos envia el eje z del sensor
   while(Wire.available())
   { 
 
-    zl = Wire.read();
+    zl = Wire.read(); // primero lee numero entero
 
   }
   
   int zout = (zl|(zh << 8)); // junta dos valores zl y zh a uno solo
-  return zout;
+  return zout; //regresa coordenadas
 
 }
