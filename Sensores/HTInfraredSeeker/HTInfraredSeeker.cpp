@@ -7,10 +7,9 @@
 
 //metodos
 
-void InfraredSeeker::Initialize()
+void InfraredSeeker::Initialize() //Se inicia la comunicacion de I2C
 {
 
-	//iniciar comunicacion I2C
 	Wire.begin();
   	Wire.beginTransmission(InfraredSeeker::Address);
   	Wire.write(0x00);
@@ -18,7 +17,7 @@ void InfraredSeeker::Initialize()
 
 }
 
-void InfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) // direccion
+void InfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) //Se obtiene la direccion de la pelota
 {
 
 	InfraredSeeker::Initialize();
@@ -39,14 +38,14 @@ void InfraredSeeker::ReadValues(byte OffsetAddress, byte* buffer) // direccion
 
 }
 
-void InfraredSeeker::ReadACRaw(byte* buffer) 
+void InfraredSeeker::ReadACRaw(byte* buffer) //Se leen los valores de el metodo anterior
 {
 	
 	ReadValues(0x49, buffer);
 
 }
 
-InfraredInput InfraredSeeker::PopulateValues(byte* buffer)
+InfraredInput InfraredSeeker::PopulateValues(byte* buffer) //Se obtienen los datos de direccion e intensidad de la pelota
 {
 
 	InfraredInput Data;
@@ -81,7 +80,7 @@ InfraredInput InfraredSeeker::PopulateValues(byte* buffer)
 
 }
 
-InfraredInput InfraredSeeker::ReadAC()
+InfraredInput InfraredSeeker::ReadAC() //Se leen todos los datos anteriores y se resumen en un solo grupo
 {
 
 	byte buffer[6];
