@@ -69,5 +69,7 @@ long HCSR04::Ranging(int sys) //Te regresa la distancia en cm o pulgadas
 
 void HCSR04::imprimirValores() //imprime valores
 {
+  
   Ranging(cm);
+
 }

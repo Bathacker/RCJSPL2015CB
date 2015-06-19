@@ -14,7 +14,7 @@ void TCS3200::color() //Se determinan los colores
 	digitalWrite(s2, LOW);
   digitalWrite(s3, LOW);
   //count OUT, pRed, RED
-  red = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
+  red = pulseIn(out, digitalRead(out) == HIGH ? LOW  : HIGH);
   digitalWrite(s3, HIGH);
   //count OUT, pBLUE, BLUE
   blue = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
@@ -39,7 +39,7 @@ void TCS3200::setPin(int _s0, int _s1, int _s2, int _s3 ,int _out) //Declaramos 
 int TCS3200::getGreen() //Obtenemos el color verde
 {
 
-  return green;  
+  return green;
 
 }
 
