@@ -2,6 +2,13 @@
 #include "MAG3110.h"
 #include "Arduino.h"
 
+MAG3110::MAG3110()
+{
+
+  
+  
+}
+
 void MAG3110::iniciar() //Iniciamos la comunicación con el sensor
 {
 
@@ -28,6 +35,13 @@ Valores MAG3110::imprimirValores() //Imprimimos los valores de x.y y z
   Serial.print("z =");    
   Serial.println(leerZ()); 
   return res;    
+
+}
+
+void MAG3110::imprimirValores()
+{
+
+  Seral.println(imprimirValores());
 
 }
 

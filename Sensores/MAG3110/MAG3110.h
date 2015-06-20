@@ -21,9 +21,10 @@ class MAG3110
 		MAG3110();
 		void iniciar(); // metodo empezar
 		Valores imprimirValores();
-		int leerX(); // variables de los valores que se obtendran de los ejes 
+		int leerX(); // variables de los valores que se obtendran de los ejes
 		int leerY();
 		int leerZ();
+		void imprimirValores2();
 
 	private:
 

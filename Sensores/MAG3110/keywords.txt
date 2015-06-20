@@ -9,4 +9,5 @@ iniciar				KEYWORD2\
 imprimirValores			KEYWORD2\
 leerX					KEYWORD2\
 leerY					KEYWORD2\
-leerZ					KEYWORD2}
+leerZ					KEYWORD2\
+imprimirValores		KEYWORD2}
