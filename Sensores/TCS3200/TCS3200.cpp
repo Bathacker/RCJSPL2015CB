@@ -60,8 +60,8 @@ int TCS3200::getRed() //Obtenemos el color rojo
 void TCS3200::imprimirValores() //Se usa para imprimir el color que detecta a la pantalla de la computadora
 {
 
-  Serial.println(TCS3200::getGreen());
-  Serial.println(TCS3200::getBlue());
-  Serial.println(TCS3200::getRed());
+  Serial.println(getGreen());
+  Serial.println(getBlue());
+  Serial.println(getRed());
 
 }

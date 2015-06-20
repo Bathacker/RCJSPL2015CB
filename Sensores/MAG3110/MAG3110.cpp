@@ -38,13 +38,6 @@ Valores MAG3110::imprimirValores() //Imprimimos los valores de x.y y z
 
 }
 
-void MAG3110::imprimirValores()
-{
-
-  Seral.println(imprimirValores());
-
-}
-
 int MAG3110::leerX() //Leemos los datos que nos envia el eje x del sensor
 {
 

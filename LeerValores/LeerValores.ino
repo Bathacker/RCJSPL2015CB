@@ -12,7 +12,6 @@ HCSR04 us(1, 2);
 TCS3200 color;
 MAG3110 compas;
 InfraredSeeker ir;
-  
 
 void setup()
 {
@@ -27,10 +26,10 @@ void loop()
   +
 
   Serial.println("Color: ");
-  Serial.println(color.imprimirValores());
+  color.imprimirValores();
   Serial.println("Compas: ");
   Serial.println(compas.leerZ());
   Serial.println("Ultrasonico: ");
-  Serial.println();
+  us.imprimirValores();
   
 }

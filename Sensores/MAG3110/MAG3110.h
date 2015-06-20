@@ -24,7 +24,6 @@ class MAG3110
 		int leerX(); // variables de los valores que se obtendran de los ejes
 		int leerY();
 		int leerZ();
-		void imprimirValores2();
 
 	private:
 

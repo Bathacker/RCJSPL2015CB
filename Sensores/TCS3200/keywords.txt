@@ -4,4 +4,4 @@ setPin 				KEYWORD2
 getRed				KEYWORD2		
 getGreen			KEYWORD2
 getBlue				KEYWORD2
-imprimirValores		KEYWORD2
+imprimirValores			KEYWORD2
