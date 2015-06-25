@@ -1,16 +1,10 @@
-#include <HTInfraredSeeker.h>
-#include <HCSR04.h>
-#include <MAG3110.h>
-#include <TCS3200.h>
-#include <Wire.h>
 #include "LCD.h"
-#include <LiquidCrystal.h>
 #include "Arduino.h"
 
 LCD::LCD()
 {
 
-
+	us(4, 6);
 
 }
 
