@@ -27,8 +27,8 @@ void imprimirValores()
 {
 
 	lcd.begin(16, 2);
-	lcd.print(compas.imprimirValores());
-	lcd.print(coloruno.imprimirValores());
+	lcd.print(compas.leerX());
+	lcd.print(coloruno.imprimirValores();
 	lcd.print(colordos.imprimirValores());
 	lcd.print(colortres.imprimirValores());
 	lcd.print(us.imprimirValores());
