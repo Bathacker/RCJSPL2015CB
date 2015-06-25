@@ -23,8 +23,8 @@ class LCD
 		TCS3200 coloruno;
 		TCS3200 colordos;
 		TCS3200 colortres;
-		HCSR04 us;
-		InfraredSeeker ir;	
+		HCSR04 us = new HCSR04(4, 6);
+		InfraredSeeker ir;
 
 };
 #endif
