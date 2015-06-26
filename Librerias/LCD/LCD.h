@@ -6,7 +6,7 @@
 #ifndef LCD_h
 #define LCD_h
 #include <LiquidCrystal.h>
-#include "Arduino.h"
+#include "arduino.h"
 
 class LCD
 {
@@ -23,8 +23,17 @@ class LCD
 		TCS3200 coloruno;
 		TCS3200 colordos;
 		TCS3200 colortres;
-		HCSR04 us = new HCSR04(4, 6);
+		HCSR04 us;
 		InfraredSeeker ir;
+		int RS;
+		int RW;
+		int E;
+		int D4;
+		int D5;
+		int D6;
+		int D7;
+		int backLight;
+		LiquidCrystal lcd;
 
 };
 #endif

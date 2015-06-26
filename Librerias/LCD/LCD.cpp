@@ -1,28 +1,28 @@
 #include "LCD.h"
-#include "Arduino.h"
+#include "arduino.h"
 
-LCD::LCD()
+LCD::LCD(int TP, int EP)
 {
 
-	
+	us(, 2);
 
 }
 
-void setPin(int RS, int RW, int D4, int D5, int D6, int D7, int A)
+void setPin(int RS, int RW, int E, int D4, int D5, int D6, int D7, int backLight)
 {
 
 	LiquidCrystal lcd(RS, RW, E, D4, D5, D6, D7);
-	pinMode(A, OUTPUT);
-	anologWrite(A, 150);
+	pinMode(backLight, OUTPUT);
+	anologWrite(backLight, 150);
 
 }
 
-void imprimirValores()
+void imprimirValores(MAG3110 compas, TCS3200 coloruno, TCS3200 colordos, TCS3200 colortres, HCSR04 us, InfraredSeeker ir, LiquidCrystal lcd)
 {
 
 	lcd.begin(16, 2);
 	lcd.print(compas.leerX());
-	lcd.print(coloruno.imprimirValores();
+	lcd.print(coloruno.imprimirValores());
 	lcd.print(colordos.imprimirValores());
 	lcd.print(colortres.imprimirValores());
 	lcd.print(us.imprimirValores());
