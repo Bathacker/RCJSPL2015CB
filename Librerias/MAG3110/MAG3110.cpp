@@ -19,7 +19,7 @@ void MAG3110::iniciar() //Iniciamos la comunicación con el sensor
 
 }
 
-Valores MAG3110::imprimirValores() //Imprimimos los valores de x.y y z
+Valores MAG3110::imprimirValores() //Imprimimos los valores de x y z
 {
 
   Valores res;

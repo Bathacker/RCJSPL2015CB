@@ -1,7 +1,6 @@
-MAG3110			KEYWORD1
-iniciar			KEYWORD2
+MAG3110				KEYWORD1
+iniciar				KEYWORD2
 imprimirValores		KEYWORD2
-leerX			KEYWORD2
-leerY			KEYWORD2
-leerZ			KEYWORD2
-imprimirValores		KEYWORD2
+leerX				KEYWORD2
+leerY				KEYWORD2
+leerZ				KEYWORD2
