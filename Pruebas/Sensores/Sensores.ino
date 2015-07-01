@@ -11,7 +11,7 @@
 #include <HTInfraredSeeker.h>
 
 HCSR04 us(9, 8);
-TCS3200 color();
+TCS3200 color = TCS3200();
 Omnidireccional omni();
 InfraredSeeker seeker = InfraredSeeker();
 InfraredInput seekerInput;
@@ -31,8 +31,14 @@ void loop()
   
   seekerInput = seeker.ReadAC();
   compasValores = compas.imprimirValores();
+  Serial.println("\n Ultrasonico: ");
   Serial.println(us.Ranging(cm));
+  Serial.println("\n Compas: ");
   compasValores;
+  Serial.println("\n Infrarrojo: ");
   seekerInput;
+  Serial.println("\n Color: ");
+  color.imprimirValores();
+  Serial.println("\n ");
   
 }
