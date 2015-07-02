@@ -8,9 +8,14 @@ VNH5019::VNH5019()
 
 }
 
-void VNH5019::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
+void VNH5019::setM1(int _M1PWM, int _M1INB, int _M1INA, int _M1EN)
 {
   
+  M1PWM = _M1PWM;
+  M1INB = _M1INB;
+  M1INA = _M1INA;
+  M1EN = _M1EN;
+
   pinMode(M1PWM, OUTPUT);
   pinMode(M1INB, OUTPUT);
   pinMode(M1INA, OUTPUT);
@@ -18,8 +23,13 @@ void VNH5019::setM1(int M1PWM, int M1INB, int M1INA, int M1EN)
   
 }
 
-void VNH5019::setM2(int M2PWM, int M2INB, int M2INA, int M2EN)
+void VNH5019::setM2(int _M2PWM, int _M2INB, int _M2INA, int _M2EN)
 {
+
+  M2PWM = _M2PWM;
+  M2INB = _M2INB;
+  M2INA = _M2INA;
+  M2EN = _M2EN;
 
   pinMode(M2PWM, OUTPUT);
   pinMode(M2INB, OUTPUT);
@@ -86,7 +96,7 @@ void VNH5019::adelante2(int vel)
 {
 
   digitalWrite(M2INB, HIGH);
-  digitalWrite(M2INA, LOW);
+  digitalWrite(M2INA, );
   analogWrite(M2PWM, vel);
 
 }

@@ -22,6 +22,22 @@ void Omnidireccional::setM2puente1(int M2PWM, int M2INB, int M2INA, int M2EN)
 
 }
 
+void Omnidireccional::encenderPuente1()
+{
+
+	puente1.encenderM1();
+	puente1.encenderM2();
+
+}
+
+void Omnidireccional::apagarPuente1()
+{
+
+	puente1.apagarM1();
+	puente1.apagarM2();
+
+}
+
 void Omnidireccional::setM1puente2(int M1PWM, int M1INB, int M1INA, int M1EN)
 {
 
@@ -33,6 +49,22 @@ void Omnidireccional::setM2puente2(int M2PWM, int M2INB, int M2INA, int M2EN)
 {
 
 	puente2.setM2(M2PWM, M2INB, M2INA, M2EN);
+
+}
+
+void Omnidireccional::encenderPuente2()
+{
+
+	puente2.encenderM1();
+	puente2.encenderM2();
+
+}
+
+void Omnidireccional::apagarPuente2()
+{
+
+	puente2.apagarM1();
+	puente2.apagarM2();
 
 }
 
