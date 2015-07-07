@@ -39,9 +39,6 @@ int TCS3200::getGreen() //Obtenemos el color verde
 
 }
 
-
-
-
 void TCS3200::imprimirValores() //Se usa para imprimir el color que detecta a la pantalla de la computadora
 {
 
