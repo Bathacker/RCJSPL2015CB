@@ -11,9 +11,7 @@ class TCS3200
    		//Metodos
    		void color();
    		void setPin(int _s0, int _s1, int _s2, int _s3 ,int _out);
-   		int getRed();
    		int getGreen();
-   		int getBlue();
    		void imprimirValores();
 
 	private:
@@ -24,10 +22,9 @@ class TCS3200
 		int s3;  
 		int out;
 		
-		// Variables  
-		int red = 0;  
+		// Variables 
 		int green = 0;  
-		int blue = 0; 
+		
 
 };
 #endif

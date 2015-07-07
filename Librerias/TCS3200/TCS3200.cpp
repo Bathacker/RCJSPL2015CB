@@ -13,11 +13,7 @@ void TCS3200::color() //Se determinan los colores
 
 	digitalWrite(s2, LOW);
   digitalWrite(s3, LOW);
-  //count OUT, pRed, RED
-  red = pulseIn(out, digitalRead(out) == HIGH ? LOW  : HIGH);
   digitalWrite(s3, HIGH);
-  //count OUT, pBLUE, BLUE
-  blue = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
   digitalWrite(s2, HIGH);
   //count OUT, pGreen, GREEN
   green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
@@ -43,25 +39,15 @@ int TCS3200::getGreen() //Obtenemos el color verde
 
 }
 
-int TCS3200::getBlue() //Obtenemos el color azul
-{
 
-  return blue;
 
-}
-
-int TCS3200::getRed() //Obtenemos el color rojo
-{
-
-  return red;
-
-}
 
 void TCS3200::imprimirValores() //Se usa para imprimir el color que detecta a la pantalla de la computadora
 {
 
-  Serial.println(getGreen());
-  Serial.println(getBlue());
-  Serial.println(getRed());
+ 
+  Serial.print("verde: ");  
+  Serial.println(getGreen(), DEC);  
+  
 
 }
