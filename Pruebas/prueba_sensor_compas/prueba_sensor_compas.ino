@@ -3,6 +3,8 @@
 #include <MAG3110.h>
 MAG3110 sensor_compas = MAG3110();
 int x;
+int y;
+int brujulai;
 
 
 void setup()
@@ -18,6 +20,5 @@ void loop()
 {
 
  sensor_compas.imprimirValores();
- delay(1500);
 
 }
