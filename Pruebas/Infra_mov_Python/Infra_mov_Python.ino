@@ -1,5 +1,7 @@
 #include <Wire.h>
 
+#include <TCS3200.h>
+
 #include <Omnidireccional.h>
 
 #include <HTInfraredSeeker.h>
