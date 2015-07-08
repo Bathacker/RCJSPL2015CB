@@ -1,7 +1,7 @@
 #include <HCSR04.h>
 
 int cm;
-HCSR04 us = HCSR04(33, 31);
+HCSR04 us = HCSR04(33, 31, 11900);
 
 void setup()
 {
@@ -13,7 +13,6 @@ void setup()
 void loop()
 {
 
-  Serial.println("\n Ultrasonico: ");
   Serial.println(us.Ranging(cm));
   
 }

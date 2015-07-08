@@ -182,6 +182,7 @@ uint8_t* HMC5883L::Read(int address, int length)
 
 char* HMC5883L::GetErrorText(int errorCode)
 {
+	
 	if(ErrorCode_1_Num == 1)
 
 		return ErrorCode_1;
