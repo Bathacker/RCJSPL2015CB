@@ -1,7 +1,8 @@
 #include <Wire.h>
 
 #include <MAG3110.h>
-MAG3110 sensor_compas = MAG3110();
+
+MAG3110 sensor_compas;
 int x;
 int y;
 int brujulai;
@@ -18,7 +19,7 @@ void setup()
 
 void loop()
 {
-
- sensor_compas.imprimirValores();
+ x=sensor_compas.leerX();
+ Serial.println(x);
 
 }

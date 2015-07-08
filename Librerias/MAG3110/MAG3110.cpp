@@ -9,151 +9,121 @@ MAG3110::MAG3110()
   
 }
 
-void MAG3110::iniciar() //Iniciamos la comunicación con el sensor
+void MAG3110::iniciar()
 {
-
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x11);
-  Wire.write(0x80);
-  Wire.endTransmission();
-
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x11);              // cntrl register2
+ Wire.write(0x80);              // send 0x80, enable auto resets
+  Wire.endTransmission();       // stop transmitting
+  
+  delay(15);
+  
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x10);              // cntrl register1
+ Wire.write(1);                 // send 0x01, active mode
+  Wire.endTransmission();       // stop transmitting
 }
 
-Valores MAG3110::imprimirValores() //Imprimimos los valores de x y z
+
+
+int MAG3110::leerX()
 {
-
-  Valores res;
-  res.x = leerX();
-  res.y = leerY();
-  res.z = leerZ();
-  Serial.print("x =");
-  Serial.print(leerX()); 
-  Serial.print(",");  
-  Serial.print("y =");    
-  Serial.print(leerY());
-  Serial.print(",");       
-  Serial.print("z =");    
-  Serial.println(leerZ()); 
-  return res;    
-
+  int xl, xh;  //define the MSB and LSB
+  
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x01);              // x MSB reg
+  Wire.endTransmission();       // stop transmitting
+ 
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
+  
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
+  { 
+    xh = Wire.read(); // receive the byte
+  }
+  
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
+  
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x02);              // x LSB reg
+  Wire.endTransmission();       // stop transmitting
+ 
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
+  
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
+  { 
+    xl = Wire.read(); // receive the byte
+  }
+  
+  int xout = (xl|(xh << 8)); //concatenate the MSB and LSB
+  return xout;
 }
 
-int MAG3110::leerX() //Leemos los datos que nos envia el eje x del sensor
+int MAG3110::leerY()
 {
-
-  int xl, xh; // xl numero entero ,xh numero decimal
+  int yl, yh;  //define the MSB and LSB
   
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x01);
-  Wire.endTransmission();
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x03);              // y MSB reg
+  Wire.endTransmission();       // stop transmitting
  
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
   { 
-
-    xh = Wire.read(); //segundo lee numero decimal
-
+    yh = Wire.read(); // receive the byte
   }
   
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x02);
-  Wire.endTransmission();
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x04);              // y LSB reg
+  Wire.endTransmission();       // stop transmitting
  
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available()) 
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
   { 
-
-    xl = Wire.read();//primero lee numero entero
-
+    yl = Wire.read(); // receive the byte
   }
   
-  int xout = (xl|(xh << 8)); // junta dos valores xl y xh a un solo numero
-  return xout; //regresar coordenadas
-
+  int yout = (yl|(yh << 8)); //concatenate the MSB and LSB
+  return yout;
 }
 
-int MAG3110::leerY() //Leemos los datos que nos envia el eje Y del sensor
+int MAG3110::leerZ()
 {
-
-  int yl, yh; //uno es numero entero yl y numero decimal yh
+  int zl, zh;  //define the MSB and LSB
   
-  Wire.beginTransmission(MAG_ADDR); 
-  Wire.write(0x03);
-  Wire.endTransmission();
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x05);              // z MSB reg
+  Wire.endTransmission();       // stop transmitting
  
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
   { 
-
-    yh = Wire.read(); //Segundo lee numero decimal
-
+    zh = Wire.read(); // receive the byte
   }
   
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x04);
-  Wire.endTransmission();
+  Wire.beginTransmission(MAG_ADDR); // transmit to device 0x0E
+ Wire.write(0x06);              // z LSB reg
+  Wire.endTransmission();       // stop transmitting
  
-  delayMicroseconds(2);
+  delayMicroseconds(2); //needs at least 1.3us free time between start and stop
   
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
+  Wire.requestFrom(MAG_ADDR, 1); // request 1 byte
+  while(Wire.available())    // slave may send less than requested
   { 
-
-    yl = Wire.read(); //Primero lee numero entero
-
+    zl = Wire.read(); // receive the byte
   }
   
-  int yout = (yl|(yh << 8)); // junta dos valores yl , yh a uno solo
-  return yout; //regresa coordenadas
-
-}
-
-int MAG3110::leerZ() //Leemos los datos que nos envia el eje z del sensor
-{
-
-  int zl, zh; //zl numero enter , zh numero decimal
-  
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x05);
-  Wire.endTransmission();
- 
-  delayMicroseconds(2);
-  
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
-  { 
-
-    zh = Wire.read(); //Segundo lee numero decimal
-
-  }
-  
-  delayMicroseconds(2);
-  
-  Wire.beginTransmission(MAG_ADDR);
-  Wire.write(0x06);
-  Wire.endTransmission();
- 
-  delayMicroseconds(2);
-  
-  Wire.requestFrom(MAG_ADDR, 1);
-  while(Wire.available())
-  { 
-
-    zl = Wire.read(); // primero lee numero entero
-
-  }
-  
-  int zout = (zl|(zh << 8)); // junta dos valores zl y zh a uno solo
-  return zout; //regresa coordenadas
-
+  int zout = (zl|(zh << 8)); //concatenate the MSB and LSB
+  return zout;
 }
