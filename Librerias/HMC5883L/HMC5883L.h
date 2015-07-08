@@ -58,6 +58,7 @@ struct MagnetometerRaw
 class HMC5883L
 {
 	public:
+	  
 	  HMC5883L();
 
 	  MagnetometerRaw ReadRawAxis();
@@ -69,10 +70,13 @@ class HMC5883L
 	  char* GetErrorText(int errorCode);
 
 	protected:
+	  
 	  void Write(int address, int byte);
 	  uint8_t* Read(int address, int length);
 
 	private:
+	  
 	  float m_Scale;
+
 };
 #endif
