@@ -1,11 +1,8 @@
 #include <Omnidireccional.h>
-#include <VNH5019.h>
 
-Omnidireccional robot = Omnidireccional();
-VNH5019 puente1 = VNH5019();
-VNH5019 puente2 = VNH5019();
 int v = 150;
 int e = 2000;
+Omnidireccional robot = Omnidireccional();
 
 void setup()
 {
@@ -14,6 +11,7 @@ void setup()
   robot.setM1puente2(6,7,8,9);
   robot.setM2puente1(3,14,4,5);
   robot.setM2puente2(2,17,16,15);
+  
   robot.encenderPuente1();
   robot.encenderPuente2();
  
@@ -22,7 +20,7 @@ void setup()
 void loop()
 {
 
-  robot.adelante(v);   //El robot va hacia adelante durante 2 segundos y se detiene
+  robot.adelante(v);   //El robot va  hacia adelante durante 2 segundos y se detiene
   delay(e);
   robot.alto();
   delay(e);  
