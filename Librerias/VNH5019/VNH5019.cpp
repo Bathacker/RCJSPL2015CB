@@ -69,8 +69,8 @@ void VNH5019::apagarM2()
 void VNH5019::adelante1(int vel)
 {
 
-  digitalWrite(M1INB, LOW);
-  digitalWrite(M1INA, HIGH);
+  digitalWrite(M1INB, HIGH);
+  digitalWrite(M1INA, LOW);
   analogWrite(M1PWM, vel);
 
 }
@@ -78,8 +78,8 @@ void VNH5019::adelante1(int vel)
 void VNH5019::atras1(int vel)
 {
 
-  digitalWrite(M1INB, HIGH);
-  digitalWrite(M1INA, LOW);
+  digitalWrite(M1INB, LOW);
+  digitalWrite(M1INA, HIGH);
   analogWrite(M1PWM, vel);
 
 }
