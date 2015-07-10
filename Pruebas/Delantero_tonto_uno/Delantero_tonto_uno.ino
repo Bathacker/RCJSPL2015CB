@@ -30,9 +30,16 @@ int ultrasonico;
 byte ir, intensidad;
 int luz;  //Verde alrededor de 25, negro alrededor de 15, blanco alrededor de 40   
 
+//Variables necesarias para compass
+float headingDegrees,heading;
+int error = 0;
+int MilliGauss_OnThe_XAxis;
+float declinationAngle = 0.0457;
+int c_actual, c_inicio,brujula;
+
 void setup() {
   //Para leer valores
-  //Serial.begin(9600);
+  Serial.begin(9600);
   //Comunicacion wire para i2c
   Wire.begin();
   //Se declaran los pines de los sensores y motores
@@ -44,22 +51,34 @@ void setup() {
   robot.setM2puente1(2,17,16,15); //Pines de motor 2 en puentte h primero
   robot.setM2puente2(3,14,4,5); //Pines de motor 2 en puente h segundo
   robot.setM1puente1(10,11,12,13);//Pines de motor 1 en puentte h primero 
+
   
-float headingDegrees,heading;
-int error = 0;
-int MilliGauss_OnThe_XAxis;
-float declinationAngle = 0.0457;
-int c_actual, c_inicio,brujula;
- c_inicio=obtenerGrados();
+
+
   //....................................................
   
   //Encendemos puentes H
   robot.encenderPuente1();
   robot.encenderPuente2();
+
+   error = compass.SetScale(1.3); // Set the scale of the compass.
+  
+  if(error != 0) // If there is an error, print it out.
+    
+    Serial.println(compass.GetErrorText(error));
+  
+  Serial.println("Setting measurement mode to continous.");
+  error = compass.SetMeasurementMode(Measurement_Continuous); // Set the measurement mode to Continuous
+  
+  if(error != 0) // If there is an error, print it out.
+    
+    Serial.println(compass.GetErrorText(error));
+    
+   c_inicio=obtenerGrados();
 }
 
 void loop() {
-   c_actual = obtenerGrados();
+  c_actual = obtenerGrados();
   brujula = arreglarCompas();
 
   //Necesario llamar metodo color de los sensores de color para leer datos
@@ -84,55 +103,12 @@ void loop() {
   intensidad=seekerInput.Strength;
   
  //Imprimir valores de prueba.....................
-  //imprimir_valores();
+  imprimir_valores();
  
   //Que el robot juegue fut
-  followball();
+  //followball();
 }
- //Alineamos el robot si esta chueco.................
-  if(brujula >= 20 && brujula <= 345)
-  {
-      
-    if(brujula >= 183)
-    {
-      robot.alto();
-      
-      do
-      {
-        
-        robot.alinearDer(70);
-        robot.Motor2alto();
-        robot.Motor4alto();
-      
-      }while(brujula > 350);
-      
-    }
-     
-    else
-    {
-       robot.alto();
-       
-       do
-       {          
-         
-         robot.alinearIzq(70);
-         robot.Motor1alto();
-         robot.Motor3alto();
-       
-       }while(brujula < 10);   
-    
-    }
-    
-  }
-         //Si esta acomodado entonces.................................
-  else
-  {
-    
-    robot.alto();
-    
-  }
 
-}
 
 int obtenerGrados()
 { 
@@ -255,15 +231,42 @@ void imprimir_valores()
 
 void followball() 
 {
-  
-  switch(ir) // switch que sirve como if , de lo contrario de no ver linea blanca hara todos los demas movimientos de los casos
+   //Alineamos el robot si esta chueco.................
+  if(brujula >= 20 && brujula <= 345)
+  {   
+    if(brujula >= 183)
+    {
+      robot.alto();   
+      do
+      {
+        robot.alinearDer(70);
+        robot.Motor2alto();
+        robot.Motor4alto();
+      }while(brujula > 350);
+    }
+     
+    else
+    {
+       robot.alto();
+       do
+       {          
+         robot.alinearIzq(70);
+         robot.Motor1alto();
+         robot.Motor3alto();
+       }while(brujula < 10);   
+    }
+  }
+         //Si esta acomodado entonces.................................
+  else
   {
-    case 0:
+    switch(ir) // switch que sirve como if , de lo contrario de no ver linea blanca hara todos los demas movimientos de los casos
+    {
+      case 0:
          if(verde1>15  &&  verde2>15  && verde3>15)
-        {
-         robot.alto();
-         esquinaInfDer();
-       }
+         {
+           robot.alto();
+           esquinaInfDer();
+         }
        else
        {
       
@@ -387,7 +390,7 @@ void followball()
       esquinaSupIzq();
      }
      break;
-
+   }
 }
 
 }
