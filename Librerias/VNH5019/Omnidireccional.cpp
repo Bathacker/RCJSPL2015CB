@@ -131,8 +131,8 @@ void Omnidireccional::Aizquierda(int vel1, int vel2, int vel3, int vel4)
 {
 
 	puente1.adelante1(vel1);
-	puente1.adelante2(vel4);
-	puente2.atras1(vel2);
+	puente1.atras2(vel4);
+	puente2.adelante1(vel2);
 	puente2.atras2(vel3);
 	
 }
@@ -141,8 +141,8 @@ void Omnidireccional::izquierda(int vel)
 {
 
 	puente1.adelante1(vel);
-	puente1.adelante2(vel);
-	puente2.atras1(vel);
+	puente1.atras2(vel);
+	puente2.adelante1(vel);
 	puente2.atras2(vel);
 
 }
@@ -151,8 +151,8 @@ void Omnidireccional::izquierda()
 {
 
 	puente1.adelante1(255);
-	puente1.adelante2(255);
-	puente2.atras1(255);
+	puente1.atras2(255);
+	puente2.adelante1(255);
 	puente2.atras2(255);
 
 }
@@ -161,8 +161,8 @@ void Omnidireccional::Aderecha(int vel1, int vel2, int vel3, int vel4)
 {
 
 	puente1.atras1(vel1);
-	puente1.atras2(vel4);
-	puente2.adelante1(vel2);
+	puente1.adelante2(vel4);
+	puente2.atras1(vel2);
 	puente2.adelante2(vel3);
 
 }
@@ -171,8 +171,8 @@ void Omnidireccional::derecha(int vel)
 {
 
 	puente1.atras1(vel);
-	puente1.atras2(vel);
-	puente2.adelante1(vel);
+	puente1.adelante2(vel);
+	puente2.atras1(vel);
 	puente2.adelante2(vel);
 
 }
@@ -181,8 +181,8 @@ void Omnidireccional::derecha()
 {
 
 	puente1.atras1(255);
-	puente1.atras2(255);
-	puente2.adelante1(255);
+	puente1.adelante2(255);
+	puente2.atras1(255);
 	puente2.adelante2(255);
 }
 
@@ -301,6 +301,26 @@ void Omnidireccional::eIDer()
 	puente1.atras2(255);
 	puente2.alto1();
 	puente2.adelante2(255);
+}
+
+void Omnidireccional::alinearDer(int vel)
+{
+
+	puente1.atras1(vel);
+	puente1.atras2(vel);
+	puente2.atras1(vel);
+	puente2.atras2(vel);
+
+}
+
+void Omnidireccional::alinearIzq(int vel)
+{
+
+	puente1.adelante1(vel);
+	puente1.adelante2(vel);
+	puente2.adelante1(vel);
+	puente2.adelante2(vel);
+
 }
 
 void Omnidireccional::alto()

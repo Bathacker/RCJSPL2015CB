@@ -42,6 +42,8 @@ class Omnidireccional //En esta libreria se usan los cuatro motores
 		void AeIDer(int vel2, int vel4);
 		void eIDer(int vel);
 		void eIDer();
+		void alinearDer(int vel);
+		void alinearIzq(int vel);
 		void alto();
 		void Motor1adel(int vel);
 		void Motor1atras(int vel);
