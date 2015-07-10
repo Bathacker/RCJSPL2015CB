@@ -16,7 +16,7 @@ void setup()
   robot.encenderPuente1();
   robot.encenderPuente2();
   delay(1000);
-  esquinaInfIzq();
+  atras();
 // robot.eIDer(100,255,255,110);
  delay(800);
   robot.alto();
@@ -73,4 +73,9 @@ void alinearIzq()
 {
   robot.alinearIzq(65);
 }
+void atras()
+{
+  robot.Aatras(200,200,200,200);
+}
+
 
