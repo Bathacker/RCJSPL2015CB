@@ -220,7 +220,7 @@ void Omnidireccional::AeSIzq(int vel2, int vel4)
 	puente1.alto1();
 	puente1.adelante2(vel4);
 	puente2.alto1();
-	puente2.atras2(vel3);
+	puente2.atras2(vel2);
 
 }
 
@@ -249,7 +249,7 @@ void Omnidireccional::AeIIzq(int vel1, int vel3)
 
 	puente1.adelante1(vel1);
 	puente1.alto2();
-	puente2.atras1(vel2);
+	puente2.atras1(vel3);
 	puente2.alto2();
 
 }
@@ -280,7 +280,7 @@ void Omnidireccional::AeIDer(int vel2, int vel4)
 	puente1.alto1();
 	puente1.atras2(vel4);
 	puente2.alto1();
-	puente2.adelante2(vel3);
+	puente2.adelante2(vel2);
 
 }
 

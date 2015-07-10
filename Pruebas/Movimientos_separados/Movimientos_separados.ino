@@ -16,9 +16,12 @@ void setup()
   robot.encenderPuente1();
   robot.encenderPuente2();
   delay(1000);
-  robot.Aadelante(5, 255, 255, 255);
-  delay(800);
+//robot.Aadelante(100, 255,255 , 110);
+// robot.eIDer(100,255,255,110);
+ delay(800);
   robot.alto();
+ 
+
   
 }
 
