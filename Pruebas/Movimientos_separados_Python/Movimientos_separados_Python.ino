@@ -17,7 +17,12 @@ void setup()
   robot.encenderPuente2();
   delay(1000);
   robot.alinearDer(65);
+  delay(1000);
   robot.alinearIzq(65);
+  delay(1000);
+  robot.derecha(150);
+  delay(1000);
+  robot.izquierda(150);
   delay(1000);
   robot.alto();
   
