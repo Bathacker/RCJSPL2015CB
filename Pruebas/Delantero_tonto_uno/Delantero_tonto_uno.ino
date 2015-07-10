@@ -20,15 +20,13 @@ InfraredSeeker seeker=InfraredSeeker();//Sensor infrarrrojo
 InfraredInput seekerInput; //estructura InfraredInput
 
 //variables
-int verde1, verde2, verde3, cm;
+int verde1, verde2, verde3,cm;
 int ultrasonico;
 byte ir, intensidad;
-int luzVerde, luzBlanca, luzNegra;  //Verde alrededor de 25, negro alrededor de 15, blanco alrededor de 40   
+int luz;  //Verde alrededor de 25, negro alrededor de 15, blanco alrededor de 40   
 int v = 150;
 
-void setup()
-{
-
+void setup() {
   //Para leer valores
   Serial.begin(9600);
   //Comunicacion wire para i2c
@@ -47,12 +45,9 @@ void setup()
   //Encendemos puentes H
   robot.encenderPuente1();
   robot.encenderPuente2();
-
 }
 
-void loop()
-{
-
+void loop() {
   //Necesario llamar metodo color de los sensores de color para leer datos
   sensor_color3.color();
   sensor_color2.color();
@@ -79,12 +74,10 @@ void loop()
  
   //Que el robot juegue fut
   //followball(seekerInput.Direction, seekerInput.Strength);
-
 }
 
 void imprimir_valores()
 {
-  
   Serial.print("Infra: ");
   Serial.print(ir);
   Serial.print(" , ");
@@ -101,28 +94,20 @@ void imprimir_valores()
   Serial.print(" , ");
   Serial.print(" verde3: ");
   Serial.println(verde3);
-
 }
-void followball(byte k,byte f)
+void followball(byte k,byte f) 
 {
-
-  if( verde3 > 40 )
+  if( verde3 > luz ) // Condicional sensor color 3 , si ve linea blanca 
+{
+  robot.atras(v);
+  robot.alto();
+}
+if(verde2 >luz) // Condicional sensor 2, si ve linea blanca
+{
+  robot.atras(v);
+  robot.alto();
   {
-
-  
-    robot.atras(v);
-    robot.alto();
-  
-  }
-
-  if(verde2 >40)
-  {
-    
-    robot.atras(v);
-    robot.alto();
-  q
-  {
-    if(verde1>40)
+    if(verde1>luz) //Condicional sensor 1, si ve linea blanca
     {
       robot.atras(v);
       robot.alto();
@@ -132,7 +117,7 @@ void followball(byte k,byte f)
 else
 {
   
-switch(k)
+switch(k) // switch que sirve como if , de lo contrario de no ver linea blanca hara todos los demas movimientos de los casos
   {
     case 0:
     robot.atras(v);
