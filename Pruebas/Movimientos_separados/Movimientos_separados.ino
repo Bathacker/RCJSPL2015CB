@@ -18,8 +18,8 @@ void setup()
   delay(1000);
   esquinaInfIzq();
 // robot.eIDer(100,255,255,110);
- //delay(800);
-  //robot.alto();
+ delay(800);
+  robot.alto();
  
 
   
@@ -28,7 +28,7 @@ void setup()
 void loop()
 {
   
-  robot.derecha(150);
+  
 
 }
 
@@ -57,5 +57,20 @@ void esquinaInfDer()
 {
   robot.Aatras(0,255,255,0);
 }
-
+void derecha()
+{
+ robot.derecha(150); 
+}
+void izquierda()
+{
+  robot.izquierda(150);
+}
+void alinearDer()
+{
+   robot.alinearDer(65);
+}
+void alinearIzq()
+{
+  robot.alinearIzq(65);
+}
 
