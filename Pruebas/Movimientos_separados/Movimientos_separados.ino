@@ -16,7 +16,7 @@ void setup()
   robot.encenderPuente1();
   robot.encenderPuente2();
   delay(1000);
-  atras();
+  esquinaInfDer();
 // robot.eIDer(100,255,255,110);
  delay(800);
   robot.alto();
