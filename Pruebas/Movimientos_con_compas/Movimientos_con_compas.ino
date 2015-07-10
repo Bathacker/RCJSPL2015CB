@@ -53,7 +53,7 @@ void loop()
   Serial.print(brujula);
 
   //Alineamos el robot si esta chueco.................
-  if(brujula >= 25 && brujula <= 340)
+  if(brujula >= 20 && brujula <= 345)
   {
       
     if(brujula >= 183)
@@ -64,6 +64,8 @@ void loop()
       {
         
         robot.alinearDer(70);
+        robot.Motor2alto();
+        robot.Motor4alto();
       
       }while(brujula > 350);
       
@@ -77,6 +79,8 @@ void loop()
        {          
          
          robot.alinearIzq(70);
+         robot.Motor1alto();
+         robot.Motor3alto();
        
        }while(brujula < 10);	 
     
