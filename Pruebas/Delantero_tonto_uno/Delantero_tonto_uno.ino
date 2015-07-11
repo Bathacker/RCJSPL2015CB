@@ -39,7 +39,7 @@ int c_actual, c_inicio,brujula;
 
 void setup() {
   //Para leer valores
-  Serial.begin(9600);
+  //Serial.begin(9600);
   //Comunicacion wire para i2c
   Wire.begin();
   //Se declaran los pines de los sensores y motores
@@ -103,10 +103,10 @@ void loop() {
   intensidad=seekerInput.Strength;
   
  //Imprimir valores de prueba.....................
-  imprimir_valores();
+  //imprimir_valores();
  
   //Que el robot juegue fut
-  //followball();
+  followball();
 }
 
 
@@ -195,11 +195,11 @@ void izquierda()
 }
 void alinearDer()
 {
-   robot.alinearDer(65);
+   robot.alinearDer(70);
 }
 void alinearIzq()
 {
-  robot.alinearIzq(65);
+  robot.alinearIzq(70);
 }
 void atras()
 {
@@ -277,14 +277,14 @@ void followball()
       break;
     case 1:
         if(verde1>15  &&  verde2>15  && verde3>15)
-         {
+                         {
           robot.alto();
-          esquinaInfDer();
+          esquinaInfIzq();
         }
         else
        {
          robot.alto();
-        esquinaSupIzq();
+        esquinaSupDer();
          delay(230);
      }
       break;
@@ -340,18 +340,34 @@ void followball()
      }
       break;
     case 6:
-     if(verde1>15  &&  verde2>15  && verde3>15)
+     if(intensidad>25)
      {
-    robot.alto();
-    adelante();
+        if(verde1>15  &&  verde2>15  && verde3>15)
+       {
+         robot.alto();
+         esquinaSupDer();
+       }
+       else
+       {
+         robot.alto();
+         esquinaInfIzq();
+        delay(230);
+       }
      }
      else
      {
-      robot.alto();
-      atras();
-      delay(230);
+       if(verde1>15  &&  verde2>15  && verde3>15)
+       {
+         robot.alto();
+         esquinaInfDer();
+        }
+       else
+       {
+         robot.alto();
+         esquinaSupIzq();
+       }
      }
-    break;
+     break;
     case 7:
      if(verde1>15  &&  verde2>15  && verde3>15)
      {
