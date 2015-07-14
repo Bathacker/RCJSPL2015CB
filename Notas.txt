@@ -1,12 +1,2 @@
-•Agregar la librería Wire cuando se agrega la librería MAG3110
-
-•El ir se debe declarar como InfraredSeeker ir();
-
-•El método pulseIn() retorna la longitud en microsegundos en un pin de                     entrada digital por un periodo de tiempo desde 10 milisegundos hasta 3 minutos. Puede ser usado para leer sensores que retornan una serie de pulsos como algunos acelerómetros o medidores de rango. Los usuarios pueden especificar el conteo en las transiciones de HIGH o LOW. El comando pulseIn detiene toda actividad mientras se ejecuta. Un descando de 1 segundo (1000000 microsegundos) previene que el comando espere por siempre. Un descanso especifico en microsegundos puede también ser determinado.
-
-Los pines de los puentes son:
-
-	setM1puente1(10,11,12,13);
-  	setM1puente2(6,7,8,9);
-	setM2puente1(3,14,4,5);
-  	setM2puente2(2,17,16,15);
+Programa hecho por yoalli y diego/
+intelirobot.com.mx #YoHagoRobots
