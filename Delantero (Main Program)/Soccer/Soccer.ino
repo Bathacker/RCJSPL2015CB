@@ -49,7 +49,7 @@ int c_actual, c_inicio,brujula;
 //Inicia setup ............................................................
 void setup() {
   //Para leer valores
-    //Serial.begin(9600);
+   //Serial.begin(9600);
   //Comunicacion wire para i2c
     Wire.begin();
   //Se declaran los pines de los sensores y motores
@@ -159,39 +159,43 @@ int arreglarCompas()
 
 void adelante()
 {
-  robot.Aadelante(100, 255,255 , 120);
+  robot.Aadelante(120, 200,200 , 150);
 }
 void esquinaSupIzq()
 {
-  robot.Aadelante(0, 110,110 , 0);
+  robot.Aadelante(0, 90,90 , 0);
 }
 void esquinaSupDer()
 {   
-  robot.Aadelante(110,0,0,110);
+  robot.Aadelante(90,0,0,90);
 }
 void esquinaInfIzq()
 {
-  robot.Aatras(110,0,0,110);
+  robot.Aatras(90,0,0,90);
 }
 void esquinaInfDer()
 {
-  robot.Aatras(0,110,110,0);
+  robot.Aatras(0,90,90,0);
 }
 void derecha()
 {
- robot.derecha(110); 
+ robot.derecha(90); 
 }
 void izquierda()
 {
-  robot.izquierda(110);
+  robot.izquierda(90);
 }
 void alinearDer()
 {
-   robot.alinearDer(70);
+    robot.alinearDer(75);
+    robot.Motor2alto();
+    robot.Motor4alto();
 }
 void alinearIzq()
 {
-  robot.alinearIzq(70);
+   robot.alinearIzq(75);
+   robot.Motor1alto();
+   robot.Motor3alto();
 }
 void atras()
 {
@@ -228,28 +232,86 @@ void followball()
 {
    //Alineamos el robot si esta chueco.................
   if(brujula >= 20 && brujula <= 345)
-  {   
-    if(brujula >= 183)
+  {  
+    if(verde1>1000  &&  verde2>11  && verde3>11)
     {
-      robot.alto();   
-      do
+      if(brujula >= 183)
       {
-        robot.alinearDer(70);
-        robot.Motor2alto();
-        robot.Motor4alto();
-      }while(brujula > 350);
+        robot.alto();   
+        do
+        {
+         alinearDer();
+        }while(brujula > 350);
+      }
+       
+      else
+      {
+         robot.alto();
+         do
+         {          
+          alinearIzq();
+         }while(brujula < 10);   
+      }
     }
-     
     else
-    {
-       robot.alto();
-       do
-       {          
-         robot.alinearIzq(70);
-         robot.Motor1alto();
-         robot.Motor3alto();
-       }while(brujula < 10);   
-    }
+   {
+     if(verde1<1000)
+      {
+        if(brujula >= 183)
+        {
+          robot.alto();   
+          do
+          {
+           alinearDer();
+          }while(brujula > 350);
+
+          robot.alto();
+          derecha();
+          delay(450);
+        }
+         
+        else
+        {
+           robot.alto();
+           do
+           {          
+            alinearIzq();
+           }while(brujula < 10); 
+
+          robot.alto();
+          derecha();
+          delay(450);
+        }
+      }
+      if(verde2<11)
+       {
+          if(brujula >= 183)
+          {
+            robot.alto();   
+            do
+            {
+             alinearDer();
+            }while(brujula > 350);
+             robot.alto();
+            izquierda();
+            delay(450);
+          }
+           
+          else
+          {
+             robot.alto();
+             do
+             {          
+              alinearIzq();
+          }while(brujula < 10); 
+            
+            robot.alto();
+            izquierda();
+            delay(450);
+          }
+       }
+    } 
+    
   }
   //Si esta acomodado entonces.................................
   else
@@ -266,9 +328,19 @@ void followball()
           }
          else
          {
-          robot.alto();
-          adelante();
-          delay(400);
+           if(verde1<1000)
+           {
+            robot.alto();
+            derecha();
+            delay(450);
+           }
+           if(verde2<11)
+           {
+            robot.alto();
+            izquierda();
+            delay(450);
+           }
+          
          }
         }
        else
@@ -288,7 +360,7 @@ void followball()
         {
           robot.alto();
           esquinaSupDer();
-          delay(400);
+          delay(450);
         }
       }
       else
@@ -308,7 +380,7 @@ void followball()
         {
           robot.alto();
           esquinaSupDer();
-          delay(400);
+          delay(450);
         }
       }
       else
@@ -326,7 +398,7 @@ void followball()
       {
         robot.alto();
         derecha();
-        delay(400);
+        delay(450);
       }
       break;
     case 4:
@@ -356,13 +428,13 @@ void followball()
       {
         robot.alto();
         esquinaSupDer();
-        delay(400);
+        delay(450);
       } 
       else
       {
         robot.alto();
         esquinaInfDer();
-        delay(400);   
+        delay(450);   
       }
      }
      break;
@@ -393,13 +465,29 @@ void followball()
       {
         robot.alto();
         esquinaSupDer();
-        delay(400);
+        delay(450);
       } 
       else
       {
-        robot.alto();
-        atras(); 
-        delay(400);  
+        if(verde1<1000)
+        {
+          robot.alto();
+          esquinaInfDer(); 
+          delay(450);
+        }
+        if(verde2<11)
+        {
+          robot.alto();
+          esquinaInfIzq(); 
+          delay(450);
+        }
+        if(verde3<11)
+        {
+          robot.alto();
+          atras(); 
+          delay(200);
+        }
+         
       }
      }
      break;
@@ -430,13 +518,13 @@ void followball()
         {
           robot.alto();
           esquinaInfIzq();
-          delay(400);
+          delay(450);
          } 
          else
          {
           robot.alto();
           esquinaSupIzq();  
-          delay(400); 
+          delay(450); 
          }
       }
      break;
@@ -467,13 +555,13 @@ void followball()
       {
         robot.alto();
         esquinaInfIzq();
-        delay(400);
+        delay(450);
       } 
       else
       {
         robot.alto();
         esquinaSupIzq(); 
-        delay(400);  
+        delay(450);  
       }
      }
      break;
@@ -489,7 +577,7 @@ void followball()
        {
         robot.alto();
         esquinaSupIzq();
-        delay(400);
+        delay(450);
        }
      }
      else
@@ -509,7 +597,7 @@ void followball()
        {
         robot.alto();
         esquinaSupIzq();
-        delay(400);
+        delay(450);
        }
       }
       else

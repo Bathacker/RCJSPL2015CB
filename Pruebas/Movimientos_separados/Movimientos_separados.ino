@@ -17,12 +17,10 @@ robot.setM1puente2(6,7,8,9);//Pines de motor 1 en puente h segundo
   robot.encenderPuente1();
   robot.encenderPuente2();
   delay(1000);
-  atras();
+  adelante();
 // robot.eIDer(100,255,255,110);
- delay(800);
-  robot.alto();
- robot.apagarPuente1();
-  robot.apagarPuente2();
+ 
+ 
 
   
 }

@@ -163,35 +163,39 @@ void adelante()
 }
 void esquinaSupIzq()
 {
-  robot.Aadelante(0, 110,110 , 0);
+  robot.Aadelante(0, 100,100 , 0);
 }
 void esquinaSupDer()
 {   
-  robot.Aadelante(110,0,0,110);
+  robot.Aadelante(100,0,0,100);
 }
 void esquinaInfIzq()
 {
-  robot.Aatras(110,0,0,110);
+  robot.Aatras(100,0,0,100);
 }
 void esquinaInfDer()
 {
-  robot.Aatras(0,110,110,0);
+  robot.Aatras(0,100,100,0);
 }
 void derecha()
 {
- robot.derecha(110); 
+ robot.derecha(190); 
 }
 void izquierda()
 {
-  robot.izquierda(110);
+  robot.izquierda(190);
 }
 void alinearDer()
 {
-   robot.alinearDer(70);
+    robot.alinearDer(75);
+    robot.Motor2alto();
+    robot.Motor4alto();
 }
 void alinearIzq()
 {
-  robot.alinearIzq(70);
+   robot.alinearIzq(75);
+   robot.Motor1alto();
+   robot.Motor3alto();
 }
 void atras()
 {
@@ -227,261 +231,354 @@ void imprimir_valores()
 void followball() 
 {
    //Alineamos el robot si esta chueco.................
-  if(brujula >= 20 && brujula <= 345)
-  {   
-    if(brujula >= 183)
-    {
-      robot.alto();   
-      do
-      {
-        robot.alinearDer(70);
-        robot.Motor2alto();
-        robot.Motor4alto();
-      }while(brujula > 350);
-    }
-     
-    else
-    {
-       robot.alto();
-       do
-       {          
-         robot.alinearIzq(70);
-         robot.Motor1alto();
-         robot.Motor3alto();
-       }while(brujula < 10);   
-    }
+   //Alineamos el robot si esta chueco.................
+  if(verde1>31 &&  verde2>31)
+  {
+    robot.alto(); 
+    atras();  
   }
-  //Si esta acomodado entonces.................................
   else
   {
-    switch(ir) // switch que sirve como if , con el cual detectara la ubicacion de la pelota con numeros de 0 a 9
-    {
-      case 0:
-        robot.alto();
-      break;
-    case 1:
-      if(ultrasonico>2)
+    if(brujula >= 20 && brujula <= 345)
+    {  
+      if(verde1<31 &&  verde2<31 && verde3<45)
       {
-        if(verde1<1600 && verde2<35 && verde3<35)
+        if(brujula >= 183)
         {
-          robot.alto();
-          izquierda();
+          robot.alto();   
+          do
+          {
+           alinearDer();
+          }while(brujula > 350);
         }
+         
         else
         {
-          robot.alto();
-          esquinaInfDer();
-          delay(200);
+           robot.alto();
+           do
+           {          
+            alinearIzq();
+           }while(brujula < 10);   
         }
       }
       else
-      {
-         robot.alto();
-        adelante();
-        delay(100);
-      }
-      break;
-    case 2:
-      if(ultrasonico>2)
-      { 
-        if(verde1<1600 && verde2<35 && verde3<35)
-        {
-          robot.alto();
-          izquierda();
-        }
-        else
-        {
-          robot.alto();
-          esquinaInfDer();
-          delay(200);
-        }
-      }
-      else
-      {
-         robot.alto();
-        adelante();
-        delay(100);
-      } 
-      break;
-    case 3:
-      if(verde1<1600 && verde2<35 && verde3<35)
-      {
-        robot.alto();
-        izquierda();
-      }
-      else
-      {
-        robot.alto();
-        derecha();
-        delay(200);
-      }
-      break;
-    case 4:
-     if(verde1<1600 && verde2<35 && verde3<35)
      {
-      if(intensidad<25)
+       if(verde1>=31)
+        {
+          if(brujula >= 183)
+          {
+            robot.alto();   
+            do
+            {
+             alinearDer();
+            }while(brujula > 350);
+
+            robot.alto();
+            esquinaInfDer();
+            delay(400);
+          }
+           
+          else
+          {
+             robot.alto();
+             do
+             {          
+              alinearIzq();
+             }while(brujula < 10); 
+
+            robot.alto();
+            esquinaInfDer();
+            delay(400);
+          }
+        }
+        if(verde2>=31)
+         {
+            if(brujula >= 183)
+            {
+              robot.alto();   
+              do
+              {
+               alinearDer();
+              }while(brujula > 350);
+               robot.alto();
+              esquinaInfIzq();
+              delay(400);
+            }
+             
+            else
+            {
+               robot.alto();
+               do
+               {          
+                alinearIzq();
+            }while(brujula < 10); 
+              
+              robot.alto();
+              esquinaInfIzq();
+              delay(400);
+            }
+         }
+      } 
+      
+    }
+    //Si esta acomodado entonces.................................
+    else
+    {
+      switch(ir) // switch que sirve como if , con el cual detectara la ubicacion de la pelota con numeros de 0 a 9
       {
+        case 0:
+          robot.alto();
+        break;
+      case 1:
         if(ultrasonico>2)
         {
-          robot.alto();
-          izquierda();
+          if(verde1<31 &&  verde2<31 && verde3<45)
+          {
+            if(verde1<11 &&  verde2<11 && verde3<11)
+           {
+             robot.alto();
+             esquinaInfDer();
+            delay(350);
+            }
+            else{
+              robot.alto();
+            esquinaInfIzq();  
+            }
+            
+          }
+          
+          else
+          {
+            robot.alto();
+             esquinaInfDer();
+            delay(350);
+          }
         }
         else
         {
            robot.alto();
-        adelante();
-        delay(100);
+          adelante();
+          delay(100);
         }
-      } 
-      else
-      {
-        robot.alto();
-        izquierda();    
-      }
-    }
-    else
-    {
-      if(intensidad<25)
-      {
-        robot.alto();
-        esquinaInfDer();
-        delay(200);
-      } 
-      else
-      {
-        robot.alto();
-        esquinaInfDer();
-        delay(200);   
-      }
-     }
-     break;
-    case 5:
-     robot.alto();
-     break;
-    case 6:
-      if(verde1<1600 && verde2<35 && verde3<35)
-      {
-        if(intensidad>24)
-        {
-          robot.alto();
-          derecha();
-        } 
-        else
-        {
-          if(ultrasonico>2)
+        break;
+      case 2:
+        if(ultrasonico>2)
+        { 
+          if(verde1<31 &&  verde2<31 && verde3<45)
+          {
+            if(verde1<11 &&  verde2<11 && verde3<11)
+            {
+             robot.alto();
+             esquinaInfDer();
+            delay(350);
+            }
+            else
+            {
+            robot.alto();
+            esquinaInfIzq();
+            }
+          }
+           
+          else
           {
             robot.alto();
-            derecha();
+            esquinaInfDer();
+            delay(350);
+          }
+        }
+        else
+        {
+           robot.alto();
+          adelante();
+          delay(100);
+        } 
+        break;
+      case 3:
+        if(verde1<31 &&  verde2<31 && verde3<45)
+        {
+          if(verde1<11 &&  verde2<11 && verde3<11)
+          {
+             robot.alto();
+             esquinaInfDer();
+            delay(350);
           }
           else
           {
+          robot.alto();
+          izquierda();
+          }
+        }
+         
+        else
+        {
+          robot.alto();
+          esquinaInfDer();
+          delay(350);
+        }
+        break;
+      case 4:
+            if(verde1<31 &&  verde2<31 && verde3<45)
+        {
+          if(verde1<11 &&  verde2<11 && verde3<11)
+          {
              robot.alto();
-            adelante();
-            delay(100);
-          }   
-         }
-      }
-      else
-      {
-        if(intensidad>24)
-        {
-          robot.alto();
-          esquinaInfIzq();
-          delay(200);
-         } 
-         else
-         {
-          robot.alto();
-          esquinaInfIzq();  
-          delay(200); 
-         }
-      }
-     break;
-    case 7:
-     if(verde1<1600 && verde2<35 && verde3<35)
-     {
-      if(intensidad>24)
-      {
-        robot.alto();
-        derecha();
-      } 
-      else
-      {
-        if(ultrasonico>2)
-        {
-          robot.alto();
-          derecha(); 
+             esquinaInfDer();
+            delay(350);
+          }
+          else
+          {
+            robot.alto();
+            izquierda(); 
+          }
+         
         }
         else
         {
           robot.alto();
-            adelante();
-            delay(100);
-        }  
-      }
+          esquinaInfDer();
+          delay(350);
+        }
+        break;
+       
+      case 5:
+       robot.alto();
+       break;
+      case 6:
+        if(ultrasonico>2)
+        {
+         if(verde1<31 &&  verde2<31 && verde3<45)
+         {
+           if(verde1<11 &&  verde2<11 && verde3<11)
+          {
+             robot.alto();
+             esquinaInfIzq();
+            delay(350);
+          }
+          else
+          {
+            robot.alto();
+          derecha();  
+          }
+          
+         }
+          
+         else
+         {
+          robot.alto();
+          esquinaInfIzq();
+          delay(350);
+         }
+        }
+        else
+        {
+          robot.alto();
+              adelante();
+              delay(100);
+        } 
+       break;
+      case 7:
+        if(ultrasonico>2)
+        {
+         if(verde1<31 &&  verde2<31 && verde3<45)
+         {
+          if(verde1<11 &&  verde2<11 && verde3<11)
+          {
+             robot.alto();
+             esquinaInfIzq();
+            delay(350);
+          }
+          else
+          {
+            robot.alto();
+          derecha();  
+          }
+          
+         }
+          
+         else
+         {
+          robot.alto();
+          esquinaInfIzq();
+          delay(350);
+         }
+        }
+        else
+        {
+          robot.alto();
+              adelante();
+              delay(100);
+        } 
+       break;
+      case 8:
+       if(ultrasonico>2)
+        {
+         if(verde1<31 &&  verde2<31 && verde3<45)
+         {
+            if(verde1<11 &&  verde2<11 && verde3<11)
+          {
+             robot.alto();
+             esquinaInfIzq();
+            delay(350);
+          }
+          else
+          {
+           robot.alto();
+          esquinaInfDer(); 
+          }
+          
+         }
+        
+         else
+         {
+          robot.alto();
+          esquinaInfIzq();
+          delay(350);
+         }
+        }
+        else
+        {
+          robot.alto();
+          adelante();
+          delay(100);
+        } 
+       break;
+      
+      case 9:
+        if(ultrasonico>2)
+        {
+         if(verde1<31 &&  verde2<31 && verde3<45)
+         {
+            if(verde1<11 &&  verde2<11 && verde3<11)
+          {
+             robot.alto();
+             esquinaInfIzq();
+            delay(350);
+          }
+          else
+          {
+          robot.alto();
+          esquinaInfDer();
+          }       
+        }
+        
+         else
+         {
+          robot.alto();
+          esquinaInfIzq();
+          delay(350);
+         }
+        }
+        else
+        {
+          robot.alto();
+              adelante();
+              delay(100);
+        } 
+       break;
      }
-     else
-     {
-      if(intensidad>24)
-      {
-        robot.alto();
-        esquinaInfIzq();
-        delay(200);
-      } 
-      else
-      {
-        robot.alto();
-        esquinaInfIzq(); 
-        delay(200);  
-      }
-     }
-     break;
-    case 8:
-      if(ultrasonico>2)
-      {
-       if(verde1<1600 && verde2<35 && verde3<35)
-       {
-        robot.alto();
-        derecha();
-       }
-       else
-       {
-        robot.alto();
-        esquinaInfIzq();
-        delay(200);
-       }
-     }
-     else
-     {
-      robot.alto();
-            adelante();
-            delay(100);
-     }
-     break; 
-    case 9:
-      if(ultrasonico>2)
-      {
-       if(verde1<1600 && verde2<35 && verde3<35)
-       {
-        robot.alto();
-        derecha();
-       }
-       else
-       {
-        robot.alto();
-        esquinaInfIzq();
-        delay(200);
-       }
-      }
-      else
-      {
-        robot.alto();
-            adelante();
-            delay(100);
-      } 
-     break;
-   }
- }
+   }  
+  }
+  
 }
 
 
